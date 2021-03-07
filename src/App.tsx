@@ -4,11 +4,12 @@ import Select from './components/Select'
 import Button from './components/Button'
 import Title from './components/Title'
 import PositionRow from './components/PositionRow'
+import Squares from './components/Squares'
 
 const App = () => {
   // const [data, setData] = useState([])
 
-  const [squares, setSquares] = useState(Array(25).fill(null))
+  const squares: any[] = Array(25).fill(null)
 
   const data = [
     {
@@ -35,14 +36,7 @@ const App = () => {
       <div className="app__header">
         <Select />
         <Button>Start</Button>
-
-        <div className="square__wrapper">
-          {squares.map((square, index) => (
-            <div key={index} className="square__item">
-              {square}
-            </div>
-          ))}
-        </div>
+        <Squares squares={squares} />
       </div>
       <div className="app__wrapper">
         <Title>Hover squares</Title>
