@@ -1,0 +1,19 @@
+@import '../../vars';
+
+.button {
+  font-size: 18px;
+  outline: none;
+  border: none;
+  background-color: $btn__background;
+  height: 40px;
+  width: 110px;
+  margin-left: 10px;
+  color: $main-color;
+  border-radius: 5px;
+  cursor: pointer;
+  @include transition;
+
+  &:hover {
+    background-color: darken($btn__background, 8%);
+  }
+}

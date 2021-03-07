@@ -1,0 +1,9 @@
+$btn__background: #0062ff;
+
+$main-color: #fff;
+
+$border-color: #001845;
+
+@mixin transition {
+  transition: 0.3s linear all;
+}
