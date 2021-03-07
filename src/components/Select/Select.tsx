@@ -1,7 +1,7 @@
-import React, { FC } from 'react'
+import React from 'react'
 import './Select.scss'
 
-const Select: FC = () => {
+const Select = () => {
   return (
     <select className="select" name="game-mode" id="game-mode">
       <option value="Pick mode" disabled selected>

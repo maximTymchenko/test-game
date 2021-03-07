@@ -1,0 +1,33 @@
+@import 'vars';
+@import 'normalize';
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+.app {
+  width: 100%;
+  max-width: 800px;
+  margin: 50px auto;
+
+  display: flex;
+  align-items: baseline;
+  justify-content: space-around;
+}
+
+.square__wrapper {
+  margin-top: 30px;
+  width: 300px;
+  height: 300px;
+  border: 1px solid black;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.square__item {
+  width: 60px;
+  height: 60px;
+  border: 1px solid black;
+  flex-basis: 20%;
+}
