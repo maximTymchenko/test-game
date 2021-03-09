@@ -4,16 +4,16 @@ import './Select.scss'
 const Select = () => {
   return (
     <select className="select" name="game-mode" id="game-mode">
-      <option value="Pick mode" disabled selected>
+      <option defaultValue="Pick mode" disabled selected>
         Pick mode
       </option>
-      <option className="select__option" value="east">
+      <option className="select__option" defaultValue="east">
         Easy mode
       </option>
-      <option className="select__option" value="normal">
+      <option className="select__option" defaultValue="normal">
         Normal mode
       </option>
-      <option className="select__option" value="hard">
+      <option className="select__option" defaultValue="hard">
         Hard mode
       </option>
     </select>

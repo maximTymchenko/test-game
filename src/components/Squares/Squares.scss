@@ -1,17 +1,35 @@
 @import '../../styles/vars';
 
-.square__wrapper {
-  margin-top: 30px;
-  width: 300px;
-  height: 300px;
-  border: 1px solid $border-color;
-  display: flex;
-  flex-wrap: wrap;
-}
+.square {
+  &__wrapper {
+    margin-top: 30px;
+    width: 300px;
+    height: 300px;
+    border: 1px solid $border-color;
+    display: flex;
+    flex-wrap: wrap;
+  }
 
-.square__item {
-  width: 60px;
-  height: 60px;
-  border: 1px solid$border-color;
-  flex-basis: 20%;
+  &__item {
+    width: 60px;
+    height: 60px;
+    border: 1px solid $border-color;
+    flex-basis: 20%;
+    @include transition;
+    cursor: pointer;
+
+    // &:hover {
+    //   background-color: $active-squares;
+    // }
+
+    &--active {
+      background-color: $active-squares;
+      width: 60px;
+      height: 60px;
+      border: 1px solid $border-color;
+      flex-basis: 20%;
+      @include transition;
+      cursor: pointer;
+    }
+  }
 }

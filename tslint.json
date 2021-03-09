@@ -1,0 +1,68 @@
+{
+    "defaultSeverity": "error",
+    "extends": ["tslint:recommended", "tslint-react"],
+    "jsRules": {
+        "check-format": ["allow-snake-case"],
+        "object-literal-sort-keys": false,
+        "quotemark": [true, "single", "jsx-double"],
+        "no-console": [false]
+    },
+    "rules": {
+        "arrow-parens": [false],
+        "curly": [false],
+        "import-spacing": false,
+        "interface-name": [false, "always-prefix"],
+        "max-line-length": [false],
+        "member-access": [false],
+        "member-ordering": [false],
+        "no-bitwise": false,
+        "no-consecutive-blank-lines": false,
+        "no-console": [false],
+        "no-debugger": true,
+        "no-empty-interface": [false],
+        "no-unused-expression": [false],
+        "no-var-requires": true,
+        "object-literal-sort-keys": [false],
+        "only-arrow-functions": [false],
+        "ordered-imports": [false],
+        "prefer-const": [false],
+        "prefer-for-of": false,
+        "quotemark": [false],
+        "semicolon": [false],
+        "space-before-function-paren": [false],
+        "trailing-comma": [false],
+        "typedef-whitespace": [false],
+        "variable-name": [
+            "allow-pascal-case",
+            "allow-snake-case",
+            "allow-leading-underscore",
+            "allow-trailing-underscore"
+        ],
+        "jsx-no-multiline-js": [false],
+        "jsx-wrap-multiline": [false],
+        "eofline": [false],
+        "jsx-no-lambda": false,
+        "no-var-keyword": false,
+        "object-literal-key-quotes": [false],
+        "one-variable-per-declaration": false,
+        "triple-equals": [false],
+        "object-literal-shorthand": false,
+        "comment-format": [false],
+        "no-string-literal": false,
+        "no-eval": false,
+        "no-shadowed-variable": [
+            false,
+            {
+                "class": true,
+                "enum": true,
+                "function": true,
+                "interface": false,
+                "namespace": true,
+                "typeAlias": false,
+                "typeParameter": false,
+                "underscore": false
+            }
+        ]
+    },
+    "rulesDirectory": []
+}

@@ -7,36 +7,26 @@ import PositionRow from './components/PositionRow'
 import Squares from './components/Squares'
 
 const App = () => {
-  // const [data, setData] = useState([])
+  const [data, setData] = useState([])
+  const [toggleGame, setToggleGame] = useState<boolean>(false)
 
-  const squares: any[] = Array(25).fill(null)
-
-  const data = [
-    {
-      easyMode: {
-        field: 5,
-      },
-      normalMode: {
-        field: 10,
-      },
-      hardMode: {
-        field: 15,
-      },
-    },
-  ]
+  const handleGame = (): void => {
+    setToggleGame(!toggleGame)
+  }
 
   useEffect(() => {
     fetch('http://demo1030918.mockable.io/')
       .then((response) => response.json())
-      .then((json) => console.log(json))
+      .then((resp) => setData(resp))
   }, [])
+  console.log(data)
 
   return (
     <div className="app">
       <div className="app__header">
         <Select />
-        <Button>Start</Button>
-        <Squares squares={squares} />
+        <Button handleGame={handleGame}>{toggleGame ? 'Stop' : 'Start'}</Button>
+        <Squares toggleGame={toggleGame} />
       </div>
       <div className="app__wrapper">
         <Title>Hover squares</Title>
