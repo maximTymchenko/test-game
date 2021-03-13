@@ -1,21 +1,32 @@
 import React from 'react'
 import './Select.scss'
+import { TSelectTitles } from '../../App'
 
-const Select = () => {
+interface ISelectProps {
+  selectTitles: TSelectTitles
+  getSelectValue?: (e: any) => void
+}
+
+const Select = (props: ISelectProps) => {
   return (
-    <select className="select" name="game-mode" id="game-mode">
+    <select
+      onChange={props.getSelectValue}
+      className="select"
+      name="game-mode"
+      id="game-mode"
+    >
       <option defaultValue="Pick mode" disabled selected>
         Pick mode
       </option>
-      <option className="select__option" defaultValue="east">
-        Easy mode
-      </option>
-      <option className="select__option" defaultValue="normal">
-        Normal mode
-      </option>
-      <option className="select__option" defaultValue="hard">
-        Hard mode
-      </option>
+      {props.selectTitles.map((option) => (
+        <option
+          key={option.id}
+          className="select__option"
+          defaultValue={option.defaulValue}
+        >
+          {option.title}
+        </option>
+      ))}
     </select>
   )
 }
