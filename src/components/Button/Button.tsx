@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { FC } from 'react'
 import './Button.scss'
 
 interface IButtonProps {
@@ -6,7 +6,7 @@ interface IButtonProps {
   handleGame: () => void
 }
 
-const Button = (props: IButtonProps) => {
+const Button: FC<IButtonProps> = (props) => {
   return (
     <button onClick={props.handleGame} className="button">
       {props.children}

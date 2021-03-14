@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { FC } from 'react'
 import './Select.scss'
 import { TSelectTitles } from '../../App'
 
@@ -7,7 +7,7 @@ interface ISelectProps {
   getSelectValue?: (e: any) => void
 }
 
-const Select = (props: ISelectProps) => {
+const Select: FC<ISelectProps> = (props) => {
   return (
     <select
       onChange={props.getSelectValue}

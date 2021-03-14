@@ -1,4 +1,4 @@
-import React, { ChangeEvent } from 'react'
+import React, { ChangeEvent, FC } from 'react'
 import './Squares.scss'
 
 interface ISquaresProps {
@@ -7,7 +7,7 @@ interface ISquaresProps {
   fieldSize?: string
 }
 
-const Squares = (props: ISquaresProps) => {
+const Squares: FC<ISquaresProps> = (props) => {
   const squaresArray = props.squares
 
   const handleMouseOver = (event: ChangeEvent<HTMLSelectElement>): void => {
