@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, ChangeEvent } from 'react'
 import Select from './components/Select'
 import Button from './components/Button'
 import Title from './components/Title'
@@ -31,9 +31,10 @@ const App = () => {
     },
   ]
 
-  const [data, setData] = useState<any>([])
   const [toggleGame, setToggleGame] = useState<boolean>(false)
   const [fieldSize, setFieldSize] = useState<string>('')
+
+  const [data, setData] = useState<any>([])
 
   useEffect(() => {
     fetch('http://demo1030918.mockable.io/')
@@ -41,10 +42,10 @@ const App = () => {
       .then((resp) => setData(resp))
   }, [])
 
-  const [squares, setSquares] = useState<any[][]>([])
+  const [squares, setSquares] = useState<null[][]>([])
 
   // toggle game mode
-  const getSelectValue = (e: any): void => {
+  const getSelectValue = (e: ChangeEvent<HTMLSelectElement>): void => {
     if (e.target.value === 'Easy mode') {
       if (data.easyMode !== null && data.easyMode !== undefined) {
         const easyMode = Number(Object.values(data.easyMode))
@@ -54,7 +55,6 @@ const App = () => {
     } else if (e.target.value === 'Normal mode') {
       if (data.normalMode !== null && data.normalMode !== undefined) {
         const normalMode = Number(Object.values(data.normalMode))
-
         setSquares(Array(10 * normalMode).fill(null))
       }
       setFieldSize('medium')

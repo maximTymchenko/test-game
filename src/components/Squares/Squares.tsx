@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { ChangeEvent } from 'react'
 import './Squares.scss'
 
 interface ISquaresProps {
@@ -10,7 +10,7 @@ interface ISquaresProps {
 const Squares = (props: ISquaresProps) => {
   const squaresArray = props.squares
 
-  const handleMouseOver = (event: any): void => {
+  const handleMouseOver = (event: ChangeEvent<HTMLSelectElement>): void => {
     if (event.target.style.background === 'blue') {
       event.target.style.background = 'white'
     } else {
